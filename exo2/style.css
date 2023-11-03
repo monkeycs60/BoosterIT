@@ -1,0 +1,19 @@
+.img {
+    float: left;
+}
+
+.first-paragraph {
+    color: red;
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.first-paragraph + p {
+    color: blue;
+    font-weight: bold;
+}
+
+.first-paragraph + p + p {
+    color: gray;
+    font-style: italic;
+}
