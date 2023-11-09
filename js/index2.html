@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Gestion des boîtes de liste</title>
+		<script>
+			// Fonction pour ajouter du texte à la liste et l'afficher si elle n'est pas vide
+			function Ajoute_Texte_Liste(id, texte) {
+				const select = document.getElementById(id);
+				const option = document.createElement('option');
+				option.value = texte;
+				option.text = texte;
+				select.appendChild(option);
+
+				// Affiche le select s'il y a des éléments
+				select.style.display = '';
+			}
+
+			// Fonction pour mettre à jour le champ texte avec la valeur sélectionnée de la liste
+			function afficheChoix(id, outputId) {
+				const select = document.getElementById(id);
+				const selectedText = select.options[select.selectedIndex].text;
+				const selectedValue = select.options[select.selectedIndex].value;
+				document.getElementById(outputId).value =
+					'Texte=' + selectedText + ' Valeur=' + selectedValue;
+			}
+
+			// Fonction pour vérifier si la liste est vide et la masquer le cas échéant
+			function verifierListeVide(id) {
+				const select = document.getElementById(id);
+				if (select.options.length === 0) {
+					select.style.display = 'none'; // Masque le select s'il est vide
+				}
+			}
+		</script>
+	</head>
+	<body onload="verifierListeVide('liste')">
+		<h2>TEST MANIPULATION BOITE DE LISTE</h2>
+		<div>
+			<input type="text" id="textInput" />
+			<button
+				onclick="Ajoute_Texte_Liste('liste', document.getElementById('textInput').value); document.getElementById('textInput').value='';"
+				>Ajouter</button
+			>
+		</div>
+
+		<select
+			id="liste"
+			size="8"
+			onchange="afficheChoix('liste', 'selectedItemText')"
+			style="display: none">
+			<!-- Les options seront ajoutées ici -->
+		</select>
+		<br />
+
+		<input type="text" id="selectedItemText" readonly />
+	</body>
+</html>

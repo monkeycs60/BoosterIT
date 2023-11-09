@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Exercice Cases à cocher et Boutons Radio</title>
+		<script>
+			function updateCheckboxStatus() {
+				let checkboxes = document.getElementsByName('checkboxGroup');
+				let checkedCount = 0;
+				checkboxes.forEach(function (checkbox) {
+					if (checkbox.checked) checkedCount++;
+				});
+				document.getElementById('checkboxStatus').value =
+					'Cases actives : ' + checkedCount + ' sur ' + checkboxes.length;
+			}
+
+			function updateRadioStatus() {
+				let radios = document.getElementsByName('radioGroup');
+				let selectedRadio = '';
+				radios.forEach(function (radio) {
+					if (radio.checked) selectedRadio = radio.value;
+				});
+				document.getElementById('radioStatus').value =
+					'Choix : ' + selectedRadio;
+			}
+		</script>
+	</head>
+	<body>
+		<h2>Les cases à cocher</h2>
+		<div>
+			<input
+				type="checkbox"
+				id="checkboxA"
+				name="checkboxGroup"
+				value="A"
+				onclick="updateCheckboxStatus()" />
+			<label for="checkboxA">A</label>
+			<input
+				type="checkbox"
+				id="checkboxB"
+				name="checkboxGroup"
+				value="B"
+				onclick="updateCheckboxStatus()" />
+			<label for="checkboxB">B</label>
+			<input
+				type="checkbox"
+				id="checkboxC"
+				name="checkboxGroup"
+				value="C"
+				onclick="updateCheckboxStatus()" />
+			<label for="checkboxC">C</label>
+		</div>
+		<input
+			type="text"
+			id="checkboxStatus"
+			aria-label="status checkbox"
+			readonly />
+
+		<h2>Les boutons radios</h2>
+		<div>
+			<input
+				type="radio"
+				id="radioA"
+				name="radioGroup"
+				value="A"
+				onclick="updateRadioStatus()" />
+			<label for="radioA">A</label>
+			<input
+				type="radio"
+				id="radioB"
+				name="radioGroup"
+				value="B"
+				onclick="updateRadioStatus()" />
+			<label for="radioB">B</label>
+			<input
+				type="radio"
+				id="radioC"
+				name="radioGroup"
+				value="C"
+				onclick="updateRadioStatus()" />
+			<label for="radioC">C</label>
+		</div>
+		<input type="text" id="radioStatus" aria-label="radio status" readonly />
+	</body>
+</html>
