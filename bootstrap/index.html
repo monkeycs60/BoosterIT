@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="/bootstraped/assets/bootstrap-5.3.2-dist/css/bootstrap.css"
+			rel="stylesheet" />
+		<title>Exercice de Grille Bootstrap</title>
+	</head>
+
+	<body>
+		<!DOCTYPE html>
+		<html lang="en">
+			<head>
+				<meta charset="UTF-8" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0" />
+				<title>Bootstrap Navbar Exercise</title>
+				<link
+					href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+					rel="stylesheet" />
+				<style></style>
+			</head>
+
+			<body>
+				<div class="container mt-5">
+					<h2>Formulaire d'enregistrement</h2>
+					<form class="row g-3 needs-validation" novalidate>
+						<div class="col-md-4">
+							<label for="email" class="form-label">Email</label>
+							<input
+								type="email"
+								class="form-control"
+								id="email"
+								required />
+							<div class="invalid-feedback">
+								Veuillez entrer un email valide.
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<label for="password" class="form-label"
+								>Mot de passe</label
+							>
+							<input
+								type="password"
+								class="form-control"
+								id="password"
+								required />
+							<div class="invalid-feedback">
+								Veuillez entrer un mot de passe.
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label for="address" class="form-label">Adresse</label>
+							<input
+								type="text"
+								class="form-control"
+								id="address"
+								required />
+							<div class="invalid-feedback">
+								Veuillez entrer votre adresse.
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<label for="address2" class="form-label">Adresse 2</label>
+							<input type="text" class="form-control" id="address2" />
+						</div>
+
+						<div class="col-md-4">
+							<label for="city" class="form-label">Ville</label>
+							<input
+								type="text"
+								class="form-control"
+								id="city"
+								required />
+							<div class="invalid-feedback">
+								Veuillez entrer votre ville.
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<label for="state" class="form-label">État</label>
+							<select class="form-select" id="state" required>
+								<option selected disabled value=""
+									>Choisissez...</option
+								>
+								<option value="FR">France</option>
+								<option value="DE">Allemagne</option>
+								<option value="IT">Italie</option>
+							</select>
+							<div class="invalid-feedback">
+								Veuillez sélectionner un état.
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<label for="zip" class="form-label">Code postal</label>
+							<input
+								type="text"
+								class="form-control"
+								id="zip"
+								required />
+							<div class="invalid-feedback">
+								Veuillez entrer votre code postal.
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									value=""
+									id="rememberMe" />
+								<label class="form-check-label" for="rememberMe">
+									Se souvenir de moi
+								</label>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<button class="btn btn-primary" type="submit"
+								>Se connecter</button
+							>
+						</div>
+					</form>
+				</div>
+
+				<script src="/bootstraped/assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+				<script>
+					(function () {
+						'use strict';
+
+						const forms = document.querySelectorAll('.needs-validation');
+
+						Array.prototype.slice.call(forms).forEach(function (form) {
+							form.addEventListener(
+								'submit',
+								function (event) {
+									if (!form.checkValidity()) {
+										event.preventDefault();
+										event.stopPropagation();
+									}
+
+									form.classList.add('was-validated');
+								},
+								false
+							);
+						});
+					})();
+				</script>
+			</body>
+		</html></body
+	></html
+>
