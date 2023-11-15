@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Guess the Number</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				text-align: center;
+				background-color: #f7f7f7;
+			}
+
+			.game-container {
+				width: 300px;
+				margin: auto;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				background-color: #fff;
+			}
+
+			#guess {
+				width: 60%;
+				padding: 10px;
+				margin: 10px 0;
+			}
+
+			.message {
+				color: green; /* Couleur pour les messages de succès */
+			}
+
+			.score,
+			.highscore {
+				color: #333;
+			}
+
+			#reset-btn {
+				padding: 10px;
+				background-color: #4caf50; /* Vert */
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			#reset-btn:hover {
+				background-color: #45a049; /* Un vert légèrement plus foncé */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="game-container">
+			<button id="reset-btn">Réessaye</button>
+			<h1>Devinez le nombre entre 0 et 20</h1>
+			<p class="score">Score: <span id="score">20</span></p>
+			<p class="message">Commencez à deviner...</p>
+			<input type="number" id="guess" min="0" max="20" />
+			<button id="check-btn">Vérifier</button>
+			<p class="highscore">Meilleur score: <span id="highscore">0</span></p>
+		</div>
+
+		<script src="./tp4.js"></script>
+	</body>
+</html>

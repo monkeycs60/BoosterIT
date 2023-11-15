@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestionnaire de Bibliothèque</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			#book-form {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+				margin-bottom: 20px;
+				gap: 20px;
+			}
+			.form-block {
+				display: flex;
+				flex-direction: column;
+			}
+
+			input {
+				padding: 8px;
+			}
+
+			button {
+				padding: 8px;
+				background: #333;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background: #555;
+				color: white;
+			}
+			.alert {
+				padding: 10px;
+			}
+			.alert-success {
+				color: green;
+				background: lightgreen;
+			}
+
+			.alert-danger {
+				color: rgb(109, 21, 21);
+				background: lightcoral;
+			}
+
+			.alert-warning {
+				color: brown;
+				background: sandybrown;
+			}
+
+			table {
+				width: 100%; 
+				border-collapse: collapse;
+			}
+
+			th,
+			td {
+				border: 1px solid #ddd; 
+				text-align: left;
+				padding: 8px; 
+			}
+
+			th {
+				background-color: #f4f4f4; 
+			}
+
+            .delete-btn {
+                background: red;
+                color: white;
+                border: none;
+                padding: 5px;
+                cursor: pointer;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Nouveau livre</h1>
+			<form id="book-form">
+				<div class="form-block">
+					<label for="title">Titre</label>
+					<input type="text" id="title" placeholder="Titre du livre" />
+				</div>
+				<div class="form-block">
+					<label for="author">Auteur</label>
+					<input type="text" id="author" placeholder="Auteur du livre" />
+				</div>
+				<div class="form-block">
+					<label for="isbn">ISBN</label>
+					<input type="text" id="isbn" placeholder="ISBN du livre" />
+				</div>
+				<button type="submit">Ajouter Livre</button>
+			</form>
+
+			<table id="book-list">
+				<thead>
+					<tr>
+						<th>Titre</th>
+						<th>Auteur</th>
+						<th>ISBN</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<script src="./tp3.js"></script>
+	</body>
+</html>
